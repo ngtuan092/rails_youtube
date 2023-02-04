@@ -8,6 +8,7 @@ class VideosController < ApplicationController
 
   # GET /videos/1 or /videos/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /videos/new
