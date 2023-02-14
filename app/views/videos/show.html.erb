@@ -9,6 +9,17 @@
   <strong>Description:</strong>
   <%= @video.description %>
 </p>
+
+<p>
+  <% if @video.thumbnail.attached? %>
+    <%= image_tag @video.thumbnail %>
+  <% end %>
+</p>
+<p>
+  <% if @video.video.attached? %>
+    <%= video_tag url_for(@video.video), controls: true %>
+  <% end %>
+</p>
 <h2>Review Form</h2>
  <%= form_with(model: @comment, local:true) do |form| %>
  <div class="field">
