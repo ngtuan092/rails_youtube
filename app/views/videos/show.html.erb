@@ -4,7 +4,11 @@
   <strong>Title:</strong>
   <%= @video.title %>
 </p>
-
+<p>
+   <% if @video.image.attached? %>
+     <%= image_tag @video.image %>
+   <% end %>
+ </p>
 <p>
   <strong>Video minute:</strong>
   <%= @video.video_minute %>
