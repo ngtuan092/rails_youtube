@@ -20,5 +20,14 @@
  </div>
  <% end %>
 
+<h2>Review List</h2>
+ <ul>
+     <% @video.comment.each do |comment| %>
+     <li>
+         <%= comment.comment %>
+         (<i><%= comment.user.email %></i>)
+     </li>
+     <% end %>
+ </ul>
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
