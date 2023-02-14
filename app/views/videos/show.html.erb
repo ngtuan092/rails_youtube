@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+   <% if @video.image.attached? %>
+     <%= image_tag @video.image %>
+   <% end %>
+ </p>
 <p>
   <strong>Title:</strong>
   <%= @video.title %>
