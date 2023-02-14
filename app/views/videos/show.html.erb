@@ -9,6 +9,16 @@
   <strong>Description:</strong>
   <%= @video.description %>
 </p>
+<h2>Review Form</h2>
+ <%= form_with(model: @comment, local:true) do |form| %>
+ <div class="field">
+    <%= form.text_area:comment %>
+    <%= form.hidden_field :video_id, :value => @video.id %>
+ </div>
+ <div class="actions">
+     <%= form.submit %>
+ </div>
+ <% end %>
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
